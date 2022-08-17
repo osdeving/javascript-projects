@@ -1,23 +1,12 @@
-let arr = [25, 15, 30, 50, 45, 20];
+const books = require("./bookList")
 
-
-function bubblesort(arr) {
-    min = arr[0];
-
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr.length; j++) {
-            if(arr[j] < min) {
-                arr[j] = min;
-            }
-        }
-
+let minIndex = 0;
+for(let i = 0; i < books.length; i++) {
+    if(books[i].price < books[minIndex].price) {
+        minIndex = i;
     }
 }
 
+const book = books[minIndex]
 
-
-console.log(`unsorted array = ${arr}`)
-
-bubblesort(arr)
-
-console.log(`sorted array = ${arr}`)
+console.log(`O livro mais barato é ${book.title} ${book.price}`)
